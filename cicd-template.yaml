@@ -94,6 +94,9 @@ objects:
              // define commands
              def mvnCmd = "mvn -s configuration/cicd-settings.xml"
 
+             // env.DEV_PROJECT = 'dev'
+             // env.STAGE_PROJECT = 'stage'
+
              stage ('Build') {
                git branch: 'eap-7', url: 'http://gogs:3000/gogs/openshift-tasks.git'
                sh "${mvnCmd} clean install -DskipTests=true"
